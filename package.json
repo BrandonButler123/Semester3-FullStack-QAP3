@@ -1,0 +1,25 @@
+{
+  "name": "semester3-fullstack-qap3",
+  "version": "1.0.0",
+  "description": "QAP#3 for FullStack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonButler123/Semester3-FullStack-QAP3.git"
+  },
+  "author": "Brandon Butler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrandonButler123/Semester3-FullStack-QAP3/issues"
+  },
+  "homepage": "https://github.com/BrandonButler123/Semester3-FullStack-QAP3#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "method-override": "^3.0.0",
+    "pg": "^8.11.3"
+  }
+}
