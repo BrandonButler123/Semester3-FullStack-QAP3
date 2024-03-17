@@ -12,3 +12,11 @@ app.use(methodOverride("_method"));
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.get("/users", (req, res) => {
+  res.render("users");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
