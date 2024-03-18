@@ -25,15 +25,57 @@ const getAllUsers = async () => {
   }
 };
 
+// function to get a user by ID from the database
 const getUserById = async (id) => {
   //   return mockUsers.find((user) => user.id === id);
+  const client = await pool.connect();
+  try {
+    const result = await client.query("SELECT * FROM users WHERE id = $1", [
+      id,
+    ]);
+    return result.rows[0];
+  } finally {
+    client.release();
+  }
 };
 
-const createUser = async (username, email, age) => {};
+const createUser = async (username, email, age) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(
+      "INSERT INTO users (username, email, age) VALUES ($1, $2, $3) RETURNING *",
+      [username, email, age]
+    );
+    return result.rows[0];
+  } finally {
+    client.release();
+  }
+};
 
-const updateUser = async (id, username, email, age) => {};
+// function to update a user in the database
+const updateUser = async (id, username, email, age) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(
+      "UPDATE users SET username = $1, email = $2, age = $3 WHERE id = $4 RETURNING *",
+      [username, email, age, id]
+    );
+    return result.rows[0];
+  } finally {
+    client.release();
+  }
+};
 
-const deleteUser = async (id) => {};
+// function to delete a user from the database
+const deleteUser = async (id) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query("DELETE FROM users WHERE id = $1", [id]);
+    return result.rows[0];
+  } finally {
+    client.release();
+  }
+};
 
 module.exports = {
   getAllUsers,
