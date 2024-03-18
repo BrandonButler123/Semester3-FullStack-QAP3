@@ -1,1 +1,1 @@
-DELETE FROM users WHERE username = 'jessica_rodriguez';
+DELETE FROM users WHERE username = 'svelez3';
