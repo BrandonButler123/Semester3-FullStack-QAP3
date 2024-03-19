@@ -1,0 +1,7 @@
+***ADD TESTING CASES FOR YOUR USERS TABLE***
+
+1. As a Martha’s Good Eats customer I can see a web page listing all the [insert your table name here] from the database.
+2. As a Martha’s Good Eats business partner I can fetch all the [insert your table name here] from the database from a REST API. The records will be returned as json data.
+3. As a Martha’s Good Eats staff member I can see a web page that will allow me to add a new item to the [insert your table name here] of the database.
+4. Continue with remaining test scenarios.
+5. Note: Save these test cases to disk files in a tests directory of your project.

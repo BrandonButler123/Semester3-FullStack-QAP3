@@ -29,9 +29,10 @@ const getAllUsers = async () => {
 const getUserById = async (id) => {
   //   return mockUsers.find((user) => user.id === id);
   const client = await pool.connect();
+  console.log("id", id);
   try {
     const result = await client.query("SELECT * FROM users WHERE id = $1", [
-      id,
+      parseInt(id),
     ]);
     return result.rows[0];
   } finally {
