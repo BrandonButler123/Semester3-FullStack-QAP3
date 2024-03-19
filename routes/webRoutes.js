@@ -3,6 +3,11 @@ const router = express.Router();
 const dataAccessLayer = require("../dataAccessLayer");
 
 // Define routes
+// Route to render the form for creating a new user
+router.get("/users/new", (req, res) => {
+  res.render("newUser");
+});
+
 // Route to get all users
 router.get("/users", async (req, res) => {
   const users = await dataAccessLayer.getAllUsers();
@@ -20,25 +25,46 @@ router.get("/users/:id", async (req, res) => {
   }
 });
 
+// Route to render the form for editing a user
+router.get("/users/:id/edit", async (req, res) => {
+  const { id } = req.params;
+  const user = await dataAccessLayer.getUserById(parseInt(id));
+  if (user) {
+    res.render("editUser", { user });
+  } else {
+    res.status(404).json({ message: "User not found" });
+  }
+});
+
 // Route to create a new user
 router.post("/users", async (req, res) => {
-  const { username, email, age } = req.body;
-  const newUser = await dataAccessLayer.createUser(username, email, age);
-  res.status(201).json(newUser);
+  const { first_name, last_name, username, email } = req.body;
+  const newUser = await dataAccessLayer.createUser(
+    first_name,
+    last_name,
+    username,
+    email
+  );
+  if (newUser) {
+    res.render("newUserCreated", { newUser });
+  } else {
+    res.status(500).send("Error creating user");
+  }
 });
 
 // Route to update a user
 router.put("/users/:id", async (req, res) => {
   const { id } = req.params;
-  const { username, email, age } = req.body;
+  const { username, first_name, last_name, email } = req.body;
   const updatedUser = await dataAccessLayer.updateUser(
     parseInt(id),
     username,
-    email,
-    age
+    first_name,
+    last_name,
+    email
   );
   if (updatedUser) {
-    res.json(updatedUser);
+    res.render("updatedUser", { updatedUser });
   } else {
     res.status(404).json({ message: "User not found" });
   }

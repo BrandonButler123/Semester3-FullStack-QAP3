@@ -40,12 +40,12 @@ const getUserById = async (id) => {
   }
 };
 
-const createUser = async (username, email, age) => {
+const createUser = async (first_name, last_name, username, email) => {
   const client = await pool.connect();
   try {
     const result = await client.query(
-      "INSERT INTO users (username, email, age) VALUES ($1, $2, $3) RETURNING *",
-      [username, email, age]
+      "INSERT INTO users (first_name, last_name, username, email) VALUES ($1, $2, $3, $4) RETURNING *",
+      [first_name, last_name, username, email]
     );
     return result.rows[0];
   } finally {
@@ -54,12 +54,12 @@ const createUser = async (username, email, age) => {
 };
 
 // function to update a user in the database
-const updateUser = async (id, username, email, age) => {
+const updateUser = async (id, first_name, last_name, username, email) => {
   const client = await pool.connect();
   try {
     const result = await client.query(
-      "UPDATE users SET username = $1, email = $2, age = $3 WHERE id = $4 RETURNING *",
-      [username, email, age, id]
+      "UPDATE users SET first_name = $1, last_name = $2, username = $3, email = $4 WHERE id = $5 RETURNING *",
+      [first_name, last_name, username, email, id]
     );
     return result.rows[0];
   } finally {

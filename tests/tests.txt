@@ -5,3 +5,34 @@
 3. As a Martha’s Good Eats staff member I can see a web page that will allow me to add a new item to the [insert your table name here] of the database.
 4. Continue with remaining test scenarios.
 5. Note: Save these test cases to disk files in a tests directory of your project.
+
+
+
+MQAP #3
+│
+|
+│  
+│  
+│   
+│   
+│
+├── tests/
+│   └── test-cases.txt
+│
+├── public/
+│   ├── images/
+│   └── styles/
+│
+├── routes/
+│   ├── apiRoutes.js
+│   └── webRoutes.js
+│
+├── views/
+│   ├── editUser.ejs
+│   ├── user.ejs
+|   ├── users.ejs
+│   └── newUser.ejs
+│
+├── dataAccessLayer.js
+├── index.js
+└── package.json
