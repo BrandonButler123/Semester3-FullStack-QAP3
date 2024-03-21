@@ -36,3 +36,7 @@ MQAP #3
 ├── dataAccessLayer.js
 ├── index.js
 └── package.json
+
+
+
+curl -d "first_name=Bilbo&last_name=Baggins" -X POST http://localhost:3000/api/users

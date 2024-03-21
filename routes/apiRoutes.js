@@ -2,18 +2,27 @@ const express = require("express");
 const router = express.Router();
 const dataAccessLayer = require("../dataAccessLayer");
 
-// Define a route to get all users
+// API/ - Home page
+router.get("/", async (req, res) => {
+  const users = await dataAccessLayer.getAllUsers(); // Get all users
+  console.log("ROUTE: /api/"); // Log to the terminal
+  res.json("API Home Page"); // Send response to the browser
+});
+
+// API/users - Get all users
 router.get("/users", async (req, res) => {
   const users = await dataAccessLayer.getAllUsers(); // Get all users
+  console.log("ROUTE: /api/users/"); // Log to the terminal
   console.log("Retreived all users:", users); // Log to the terminal
   res.json(users); // Send response to the browser
 });
 
-// Define a route to get a user by ID
+// API/users/:id - Get a user by ID
 router.get("/users/:id", async (req, res) => {
   const { id } = req.params; // Get the ID from the URL
   const user = await dataAccessLayer.getUserById(parseInt(id)); // Get the user by ID
   if (user) {
+    console.log(`ROUTE: /api/users/${id}/`); // Log to the terminal
     console.log("Retrieved user by ID:", user); // Log to the terminal
     res.json(user); // Send response to the browser
   } else {
@@ -22,7 +31,7 @@ router.get("/users/:id", async (req, res) => {
   }
 });
 
-// Define a route to create a new user
+// API/users - Create a new user
 router.post("/users", async (req, res) => {
   const { username, email, age } = req.body; // Get user details from the request body
   const newUser = await dataAccessLayer.createUser(username, email, age); // Create a new user

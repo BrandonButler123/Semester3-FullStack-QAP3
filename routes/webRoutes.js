@@ -75,7 +75,7 @@ router.delete("/users/:id", async (req, res) => {
   const { id } = req.params;
   const deletedUser = await dataAccessLayer.deleteUser(parseInt(id));
   if (deletedUser) {
-    res.json({ message: "User deleted successfully" });
+    res.send({ message: "User deleted successfully" });
   } else {
     res.status(404).json({ message: "User not found" });
   }
