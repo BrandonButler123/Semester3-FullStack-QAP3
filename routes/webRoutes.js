@@ -55,12 +55,12 @@ router.post("/users", async (req, res) => {
 // Route to update a user
 router.put("/users/:id", async (req, res) => {
   const { id } = req.params;
-  const { username, first_name, last_name, email } = req.body;
+  const { first_name, last_name, username, email } = req.body;
   const updatedUser = await dataAccessLayer.updateUser(
     parseInt(id),
-    username,
     first_name,
     last_name,
+    username,
     email
   );
   if (updatedUser) {
