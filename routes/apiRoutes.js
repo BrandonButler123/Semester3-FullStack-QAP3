@@ -33,8 +33,14 @@ router.get("/users/:id", async (req, res) => {
 
 // API/users - Create a new user
 router.post("/users", async (req, res) => {
-  const { username, email, age } = req.body; // Get user details from the request body
-  const newUser = await dataAccessLayer.createUser(username, email, age); // Create a new user
+  const { first_name, last_name, username, email } = req.body; // Get user details from the request body
+  const newUser = await dataAccessLayer.createUser(
+    first_name,
+    last_name,
+    username,
+    email
+  ); // Create a new user√
+  // Log a message indicating that the user was added
   res.status(201).json(newUser); // Send response to the browser
 });
 
