@@ -43,23 +43,6 @@ router.post("/users", async (req, res) => {
   res.status(201).json(newUser); // Send response to the browser
 });
 
-// API/users/:id - Update a user by ID
-router.put("/users/:id", async (req, res) => {
-  const { id } = req.params;
-  const { first_name, last_name, username, email } = req.body;
-  const updatedUser = await dataAccessLayer.updateUser(id, {
-    first_name,
-    last_name,
-    username,
-    email,
-  });
-  if (updatedUser) {
-    res.json(updatedUser);
-  } else {
-    res.status(404).json({ message: "User not found" });
-  }
-});
-
 // API/users/:id - Delete a user by ID
 router.delete("/users/:id", async (req, res) => {
   const { id } = req.params;
