@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "first_name": "Toma",
+    "last_name": "Hubbucks",
+    "username": "thubbucks0",
+    "email": "thubbucks0@phoca.cz"
+  },
+  {
+    "id": 2,
+    "first_name": "Gaelan",
+    "last_name": "Goldsbury",
+    "username": "ggoldsbury1",
+    "email": "ggoldsbury1@cargocollective.com"
+  },
+  {
+    "id": 3,
+    "first_name": "Sibella",
+    "last_name": "Keyse",
+    "username": "skeyse2",
+    "email": "skeyse2@google.co.jp"
+  },
+  {
+    "id": 4,
+    "first_name": "Sydelle",
+    "last_name": "Velez",
+    "username": "svelez3",
+    "email": "svelez3@hao123.com"
+  },
+  {
+    "id": 5,
+    "first_name": "Devi",
+    "last_name": "Whitwham",
+    "username": "dwhitwham4",
+    "email": "dwhitwham4@photobucket.com"
+  },
+  {
+    "id": 6,
+    "first_name": "Raimundo",
+    "last_name": "Haggie",
+    "username": "rhaggie5",
+    "email": "rhaggie5@skype.com"
+  },
+  {
+    "id": 7,
+    "first_name": "Dara",
+    "last_name": "Aspole",
+    "username": "daspole6",
+    "email": "daspole6@ibm.com"
+  },
+  {
+    "id": 8,
+    "first_name": "Elva",
+    "last_name": "Bausmann",
+    "username": "ebausmann7",
+    "email": "ebausmann7@vk.com"
+  },
+  {
+    "id": 9,
+    "first_name": "Gloriane",
+    "last_name": "Huband",
+    "username": "ghuband8",
+    "email": "ghuband8@apple.com"
+  },
+  {
+    "id": 10,
+    "first_name": "Dulcia",
+    "last_name": "Teresa",
+    "username": "dteresa9",
+    "email": "dteresa9@yale.edu"
+  }
+]
