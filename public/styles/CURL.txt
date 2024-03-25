@@ -4,5 +4,3 @@ curl -d "first_name=Brandon&last_name=Butler&username=BButler&email=bbutlers@gma
 //Delete a user by id
 curl -X DELETE http://localhost:3000/api/users/id
 
-//Update a user by id
-curl -X PUT -H "Content-Type: application/json" -d '{"first_name":"Steph", "last_name":"Dakins", "username":"SDakins", "email":"steph@gmail.com"}' http://localhost:3000/users/4
